@@ -9,6 +9,8 @@ import Paper from "@mui/material/Paper";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useNavigate } from "react-router";
+import EditProductContainer from "../editProduct/EditProductContainer";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -30,7 +32,9 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const ProductsTable = ({ products }) => {
+const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal }) => {
+  const navigate = useNavigate();
+
   return (
     <TableContainer
       component={Paper}
@@ -52,7 +56,7 @@ const ProductsTable = ({ products }) => {
             <StyledTableCell align="center">NAME</StyledTableCell>
             <StyledTableCell align="center">CATEGORY</StyledTableCell>
             <StyledTableCell align="center">PRICE</StyledTableCell>
-            <StyledTableCell align="center">STOCK</StyledTableCell>{" "}
+            <StyledTableCell align="center">STOCK</StyledTableCell>
             <StyledTableCell align="center">DESCRIPTION</StyledTableCell>
             <StyledTableCell align="center">EDIT</StyledTableCell>
             <StyledTableCell align="center">DELETE</StyledTableCell>
@@ -72,14 +76,15 @@ const ProductsTable = ({ products }) => {
                 {item.description}
               </StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton>
+                <IconButton onClick={()=>navigate(`/editProduct/${item.id}`)}>
                   <EditIcon />
                 </IconButton>
               </StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton>
+                <IconButton onClick={()=>setOpenModal(true)}>
                   <DeleteIcon />
                 </IconButton>
+                {openModal && <EditProductContainer id={item.id}/>}
               </StyledTableCell>
             </StyledTableRow>
           ))}

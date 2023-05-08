@@ -1,13 +1,10 @@
-
 import EditProduct from "./EditProduct";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
-const EditProductContainer = ({id}) => {
-
+const EditProductContainer = ({ id }) => {
   const [editProduct, setEditProduct] = useState(null);
- 
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/products/${id}`)
@@ -17,8 +14,8 @@ const EditProductContainer = ({id}) => {
       .catch((error) => {
         console.log(error);
       });
-      console.log(editProduct)
-  }, [editProduct, id]);
+    console.log(id);
+  }, []);
   return <EditProduct />;
 };
 

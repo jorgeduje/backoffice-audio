@@ -76,15 +76,15 @@ const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal })
                 {item.description}
               </StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton onClick={()=>navigate(`/editProduct/${item.id}`)}>
+                <IconButton onClick={()=>setOpenModal(!openModal)}>
                   <EditIcon />
                 </IconButton>
               </StyledTableCell>
+              {openModal && <EditProductContainer id={item.id}/>}
               <StyledTableCell align="center">
-                <IconButton onClick={()=>setOpenModal(true)}>
+                <IconButton onClick={()=>deleteProductById(item.id)}>
                   <DeleteIcon />
                 </IconButton>
-                {openModal && <EditProductContainer id={item.id}/>}
               </StyledTableCell>
             </StyledTableRow>
           ))}

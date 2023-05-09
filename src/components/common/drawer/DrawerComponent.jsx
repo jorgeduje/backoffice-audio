@@ -44,7 +44,7 @@ const DrawerComponent = (props) => {
     >
       <List>
         {menuRouter.map(({ id, path }) => (
-          <ListItem key={id} disablePadding onClick={() => navigate({ path })}>
+          <ListItem key={id} disablePadding onClick={() => navigate(path)}>
             <ListItemButton>
               <ListItemIcon sx={{ color: "white" }}>
                 {id % 2 === 0 ? <PersonIcon /> : <InventoryIcon />}

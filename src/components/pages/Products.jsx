@@ -1,7 +1,7 @@
-import ProductsTable from "../common/productsTable/ProductsTableContainer";
+import ProductsTableContainer from "../common/productsTable/ProductsTableContainer";
 
 const Products = () => {
-  return <ProductsTable />;
+  return <ProductsTableContainer />;
 };
 
 export default Products;

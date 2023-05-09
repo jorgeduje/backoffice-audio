@@ -44,7 +44,7 @@ const DrawerComponent = (props) => {
     >
       <List>
         {menuRouter.map(({ id, path }) => (
-          <ListItem key={id} disablePadding onClick={() => navigate({ path })}>
+          <ListItem key={id} disablePadding onClick={() => navigate(path)}>
             <ListItemButton>
               <ListItemIcon sx={{ color: "white" }}>
                 {id % 2 === 0 ? <PersonIcon /> : <InventoryIcon />}
@@ -107,6 +107,7 @@ const DrawerComponent = (props) => {
           <img
             src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
             alt="logo"
+            onClick={()=>navigate('/')}
           />
         </Toolbar>
       </AppBar>

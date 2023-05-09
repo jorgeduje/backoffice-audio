@@ -1,8 +1,7 @@
-import ProductsTable from '../common/productsTable/ProductsTableContainer'
-const Products = () => {
-  return (
-    <ProductsTable />
-  )
-}
+import ProductsTable from "../common/productsTable/ProductsTableContainer";
 
-export default Products
+const Products = () => {
+  return <ProductsTable />;
+};
+
+export default Products;

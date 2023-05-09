@@ -9,7 +9,6 @@ import Paper from "@mui/material/Paper";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useNavigate } from "react-router";
 import EditProductContainer from "../editProduct/EditProductContainer";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -33,12 +32,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal }) => {
-  const navigate = useNavigate();
 
   return (
     <TableContainer
       component={Paper}
-      sx={{ padding: "4rem", boxShadow: "none" }}
+      sx={{ padding: "8rem 4rem", boxShadow: "none" }}
     >
       <Table
         sx={{
@@ -48,18 +46,18 @@ const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal })
         }}
         aria-label="customized table"
       >
-        <TableHead>
+        <TableHead >
           <TableRow>
-            <StyledTableCell align="left" sx={{ width: "2rem" }}>
+            <StyledTableCell align="left" sx={{ width: "2rem", backgroundColor:'#d87d4a !important'}}>
               ID
             </StyledTableCell>
-            <StyledTableCell align="center">NAME</StyledTableCell>
-            <StyledTableCell align="center">CATEGORY</StyledTableCell>
-            <StyledTableCell align="center">PRICE</StyledTableCell>
-            <StyledTableCell align="center">STOCK</StyledTableCell>
-            <StyledTableCell align="center">DESCRIPTION</StyledTableCell>
-            <StyledTableCell align="center">EDIT</StyledTableCell>
-            <StyledTableCell align="center">DELETE</StyledTableCell>
+            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>NAME</StyledTableCell>
+            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>CATEGORY</StyledTableCell>
+            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>PRICE</StyledTableCell>
+            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>STOCK</StyledTableCell>
+            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>DESCRIPTION</StyledTableCell>
+            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>EDIT</StyledTableCell>
+            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>DELETE</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -1,13 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
-import Products from "./components/pages/Products";
+import AppRouter from "./Router/AppRouter";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Products />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 

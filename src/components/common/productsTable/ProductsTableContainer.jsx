@@ -2,7 +2,7 @@ import axios from "axios";
 import ProductsTable from "./ProductsTable";
 import { useEffect, useState } from "react";
 import Loading from "../loading/Loading";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 
 const ProductsTableContainer = () => {
   const [products, setProducts] = useState(null);
@@ -22,19 +22,29 @@ const ProductsTableContainer = () => {
   }, []);
 
   const deleteProductById = (id) => {
-      swal({
-      title: "Are you sure you want to delete this product?",
-      // text: "",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    axios.delete(`http://localhost:5000/products/${id}`)
-      .then(async(res) => {
-        setDeleteProduct(res.data);
+    Swal
+      .fire({
+        title: "Do you want delete?",
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: "Okey",
+        denyButtonText: `No`,
       })
-      .catch((error) => {
-        console.log(error);
+      .then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire("Saved!", "", "success");
+          axios
+            .delete(`http://localhost:5000/products/${id}`)
+            .then(async (res) => {
+              setDeleteProduct(res.data);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        } else if (result.isDenied) {
+          Swal.fire("Changes are not saved", "", "info");
+        }
       });
   };
   if (!products) {
@@ -42,7 +52,12 @@ const ProductsTableContainer = () => {
   }
 
   return (
-    <ProductsTable products={products} deleteProductById={deleteProductById} openModal={openModal} setOpenModal={setOpenModal}/>
+    <ProductsTable
+      products={products}
+      deleteProductById={deleteProductById}
+      openModal={openModal}
+      setOpenModal={setOpenModal}
+    />
   );
 };
 

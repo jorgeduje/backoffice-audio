@@ -36,7 +36,7 @@ const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal })
   return (
     <TableContainer
       component={Paper}
-      sx={{ padding: "8rem 4rem", boxShadow: "none" }}
+      sx={{ padding: "8rem 4rem 4rem 19rem", boxShadow: "none", overflow:'hidden' }}
     >
       <Table
         sx={{

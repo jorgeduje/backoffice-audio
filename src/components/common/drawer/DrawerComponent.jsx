@@ -107,6 +107,7 @@ const DrawerComponent = (props) => {
           <img
             src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
             alt="logo"
+            onClick={()=>navigate('/')}
           />
         </Toolbar>
       </AppBar>

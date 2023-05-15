@@ -10,7 +10,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { menuRouter } from "../../../Router/menuRouter";
 import { ListItemIcon } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
@@ -18,14 +18,11 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import Products from "../../pages/Products";
-import Users from "../../pages/Users";
 
 const drawerWidth = 240;
 
 const DrawerComponent = (props) => {
   const { window } = props;
-  const location = useLocation();
   //  console.log(location)
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
@@ -160,13 +157,10 @@ const DrawerComponent = (props) => {
           py: 4,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           backgroundColor: "white",
-          minHeight: "100vh",
         }}
       >
         <Toolbar />
-        {/* aca va o productos o users */}
-        {location.pathname === "/products" && <Products />}
-        {location.pathname === "/users" && <Users />}
+        {props.children}
       </Box>
     </Box>
   );

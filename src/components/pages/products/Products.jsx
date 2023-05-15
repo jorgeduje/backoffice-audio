@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import { ButtonCustom, LinkGoBack } from "../../Custom/CustomComponents";
 import AddIcon from "@mui/icons-material/Add";
-import NewProductModalContainer from "../../common/newProductModal/NewProductModalContainer";
 import ProductsTableContainer from "../../common/productsTable/ProductsTableContainer";
+import EditProductModalContainer from "../../common/editProduct/editProductModal/EditProductModalContainer";
+import NewProductModalContainer from "../../common/newProduct/newProductModal/NewProductModalContainer";
 
 const Products = ({
   deleteProductById,
@@ -11,7 +12,10 @@ const Products = ({
   products,
   editProductModal,
   navigate,
-  open
+  open,
+  openEdit,
+  handleCloseEdit,
+  productForEdit
 }) => {
   return (
     <>
@@ -36,6 +40,11 @@ const Products = ({
         editProductModal={editProductModal}
       />
       <NewProductModalContainer open={open} handleClose={handleClose} />
+      <EditProductModalContainer
+        openEdit={openEdit}
+        handleCloseEdit={handleCloseEdit}
+        productForEdit={productForEdit}
+      />
     </>
   );
 };

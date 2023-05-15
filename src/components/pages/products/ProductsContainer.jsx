@@ -9,11 +9,16 @@ const ProductsContainer = () => {
 
   const [products, setProducts] = useState(null);
   const [isDeleted, setIsDelete] = useState(false);
+  const [productForEdit, setProductForEdit] = useState({});
 
   // modal
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  // modal edit
+  const [openEdit, setOpenEdit] = useState(false);
+  const handleOpenEdit = () => setOpenEdit(true);
+  const handleCloseEdit = () => setOpenEdit(false);
 
   useEffect(() => {
     setIsDelete(false);
@@ -24,7 +29,6 @@ const ProductsContainer = () => {
       .catch((error) => {
         console.log(error);
       });
-    // console.log(products)
   }, [isDeleted]);
 
   const deleteProductById = (id) => {
@@ -51,19 +55,23 @@ const ProductsContainer = () => {
   };
 
   const editProductModal = (item) => {
-    handleOpen();
+    handleOpenEdit();
+    setProductForEdit(item);
   };
-  return (
-    <Products
-      deleteProductById={deleteProductById}
-      handleOpen={handleOpen}
-      handleClose={handleClose}
-      products={products}
-      editProductModal={editProductModal}
-      navigate={navigate}
-      open={open}
-    />
-  );
+
+  let dataProps = {
+    deleteProductById,
+    handleOpen,
+    handleClose,
+    products,
+    editProductModal,
+    navigate,
+    open,
+    openEdit,
+    handleCloseEdit,
+    productForEdit,
+  };
+  return <Products {...dataProps} />;
 };
 
 export default ProductsContainer;

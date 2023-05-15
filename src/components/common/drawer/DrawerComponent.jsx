@@ -153,10 +153,10 @@ const DrawerComponent = (props) => {
       <Box
         component="main"
         sx={{
-          flexGrow: 1,
-          py: 4,
+          py: 2,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           backgroundColor: "white",
+          padding: "20px",
         }}
       >
         <Toolbar />

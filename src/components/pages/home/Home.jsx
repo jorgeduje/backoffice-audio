@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 const Home = () => {
   return (
     <div>
-      <Typography variant="h1" color={"primary"}>
+      <Typography variant="h3" color={"primary"}>
         Home
       </Typography>
     </div>

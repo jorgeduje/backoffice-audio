@@ -17,7 +17,7 @@ export const LinkGoBack = styled(Link)(({ theme }) => ({
 
 //Button orange (naranja)
 export const ButtonCustom = styled(Button)(({ theme }) => ({
-  width: "284px",
+  width: "154px",
   height: "48px",
   backgroundColor: theme.palette.primary.main,
   border: "none",

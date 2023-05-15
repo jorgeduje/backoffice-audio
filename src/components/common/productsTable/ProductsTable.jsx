@@ -30,15 +30,18 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const ProductsTable = ({
-  products,
-  deleteProductById,
-  editProductModal
-}) => {
+const ProductsTable = ({ products, deleteProductById, editProductModal }) => {
   return (
     <TableContainer
       component={Paper}
-      sx={{ padding: "3rem", boxShadow: "none", overflow: "hidden" }}
+      sx={{
+        boxShadow: "none",
+        overflow: "hidden",
+        mt: 4,
+        "-webkit-box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+        "-moz-box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+        "box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+      }}
     >
       <Table
         sx={{

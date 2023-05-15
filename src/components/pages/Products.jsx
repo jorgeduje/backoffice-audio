@@ -18,7 +18,7 @@ const Products = () => {
         }}
       >
         <LinkGoBack onClick={() => navigate(-1)}>Go Back</LinkGoBack>
-        <ButtonCustom><AddIcon /></ButtonCustom>
+        <ButtonCustom><AddIcon />&nbsp; product</ButtonCustom>
       </Box>
       <ProductsTableContainer />;
     </>

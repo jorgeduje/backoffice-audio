@@ -19,13 +19,14 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Products from "../../pages/Products";
+import Users from "../../pages/Users";
 
 const drawerWidth = 240;
 
 const DrawerComponent = (props) => {
   const { window } = props;
- const location = useLocation();
- console.log(location)
+  const location = useLocation();
+  //  console.log(location)
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
 
@@ -50,7 +51,7 @@ const DrawerComponent = (props) => {
           <ListItem key={id} disablePadding onClick={() => navigate(path)}>
             <ListItemButton>
               <ListItemIcon sx={{ color: "white" }}>
-                {id === 'users' ? <PersonIcon /> : <InventoryIcon />}
+                {id === "users" ? <PersonIcon /> : <InventoryIcon />}
               </ListItemIcon>
               <ListItemText primary={id} sx={{ textTransform: "capitalize" }} />
             </ListItemButton>
@@ -110,7 +111,7 @@ const DrawerComponent = (props) => {
           <img
             src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
             alt="logo"
-            onClick={()=>navigate('/')}
+            onClick={() => navigate("/")}
           />
         </Toolbar>
       </AppBar>
@@ -158,13 +159,14 @@ const DrawerComponent = (props) => {
           flexGrow: 1,
           py: 4,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          backgroundColor: 'white',
-          minHeight: "100vh"
+          backgroundColor: "white",
+          minHeight: "100vh",
         }}
       >
         <Toolbar />
         {/* aca va o productos o users */}
-        {location.pathname === '/products' && <Products/> }
+        {location.pathname === "/products" && <Products />}
+        {location.pathname === "/users" && <Users />}
       </Box>
     </Box>
   );

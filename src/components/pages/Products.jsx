@@ -12,8 +12,8 @@ const Products = () => {
         sx={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "flex-end",
-          margin: "6rem 4rem 0",
+          justifyContent: "space-between",
+          margin: "3rem 3rem 0",
           alignItems: "center",
         }}
       >

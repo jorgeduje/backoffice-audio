@@ -103,8 +103,8 @@ const ProductsTable = ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {products.map((item) => (
-            <StyledTableRow key={item.name}>
+          {products.map((item,i) => (
+            <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
                 {item.id}
               </StyledTableCell>

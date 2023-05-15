@@ -1,11 +1,17 @@
-import Products from "../components/pages/Products";
 import Users from '../components/pages/Users'
+import HomeContainer from "../components/pages/home/HomeContainer";
+import ProductsContainer from "../components/pages/products/ProductsContainer";
 
 export const menuRouter = [
     {
+        id: 'home',
+        path: '/',
+        Element: HomeContainer
+    },
+    {
         id: 'products',
         path: '/products',
-        Element: Products
+        Element: ProductsContainer
     },
     {
         id: 'users',

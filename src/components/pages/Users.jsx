@@ -1,8 +1,13 @@
+import { Typography } from "@mui/material"
 
 
 const Users = () => {
   return (
-    <div>Users</div>
+    <div>
+       <Typography variant="h1" color={"primary"}>
+        Users
+      </Typography>
+    </div>
   )
 }
 

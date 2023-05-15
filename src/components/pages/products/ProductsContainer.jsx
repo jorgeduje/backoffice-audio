@@ -1,14 +1,10 @@
-import { Box } from "@mui/material";
-import ProductsTableContainer from "../common/productsTable/ProductsTableContainer";
-import { LinkGoBack, ButtonCustom } from "../Custom/CustomComponents";
 import { useNavigate } from "react-router-dom";
-import AddIcon from "@mui/icons-material/Add";
 import { useEffect, useState } from "react";
-import { deleteById, getAllProducts } from "../../services/products";
 import Swal from "sweetalert2";
-import NewProductModalContainer from "../common/newProductModal/NewProductModalContainer";
+import Products from "./Products";
+import { deleteById, getAllProducts } from "../../../services/products";
 
-const Products = () => {
+const ProductsContainer = () => {
   const navigate = useNavigate();
 
   const [products, setProducts] = useState(null);
@@ -54,34 +50,20 @@ const Products = () => {
     });
   };
 
-  const editProductModal = (item)=>{
-    handleOpen()
-  }
+  const editProductModal = (item) => {
+    handleOpen();
+  };
   return (
-    <>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          margin: "3rem 3rem 0",
-          alignItems: "center",
-        }}
-      >
-        <LinkGoBack onClick={() => navigate(-1)}>Go Back</LinkGoBack>
-        <ButtonCustom onClick={handleOpen}>
-          <AddIcon />
-          &nbsp; product
-        </ButtonCustom>
-      </Box>
-      <ProductsTableContainer
-        products={products}
-        deleteProductById={deleteProductById}
-        editProductModal={editProductModal}
-      />
-      <NewProductModalContainer open={open} handleClose={handleClose} />
-    </>
+    <Products
+      deleteProductById={deleteProductById}
+      handleOpen={handleOpen}
+      handleClose={handleClose}
+      products={products}
+      editProductModal={editProductModal}
+      navigate={navigate}
+      open={open}
+    />
   );
 };
 
-export default Products;
+export default ProductsContainer;

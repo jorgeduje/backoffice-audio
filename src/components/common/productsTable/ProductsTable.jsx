@@ -31,12 +31,16 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal }) => {
-
+const ProductsTable = ({
+  products,
+  deleteProductById,
+  openModal,
+  setOpenModal,
+}) => {
   return (
     <TableContainer
       component={Paper}
-      sx={{ padding: "8rem 4rem", boxShadow: "none" }}
+      sx={{ padding: "3rem", boxShadow: "none", overflow: "hidden" }}
     >
       <Table
         sx={{
@@ -46,23 +50,61 @@ const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal })
         }}
         aria-label="customized table"
       >
-        <TableHead >
+        <TableHead>
           <TableRow>
-            <StyledTableCell align="left" sx={{ width: "2rem", backgroundColor:'#d87d4a !important'}}>
+            <StyledTableCell
+              align="left"
+              sx={{ width: "2rem", backgroundColor: "#d87d4a !important" }}
+            >
               ID
             </StyledTableCell>
-            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>NAME</StyledTableCell>
-            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>CATEGORY</StyledTableCell>
-            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>PRICE</StyledTableCell>
-            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>STOCK</StyledTableCell>
-            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>DESCRIPTION</StyledTableCell>
-            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>EDIT</StyledTableCell>
-            <StyledTableCell align="center" sx={{backgroundColor:'#d87d4a !important'}}>DELETE</StyledTableCell>
+            <StyledTableCell
+              align="center"
+              sx={{ backgroundColor: "#d87d4a !important" }}
+            >
+              NAME
+            </StyledTableCell>
+            <StyledTableCell
+              align="center"
+              sx={{ backgroundColor: "#d87d4a !important" }}
+            >
+              CATEGORY
+            </StyledTableCell>
+            <StyledTableCell
+              align="center"
+              sx={{ backgroundColor: "#d87d4a !important" }}
+            >
+              PRICE
+            </StyledTableCell>
+            <StyledTableCell
+              align="center"
+              sx={{ backgroundColor: "#d87d4a !important" }}
+            >
+              STOCK
+            </StyledTableCell>
+            <StyledTableCell
+              align="center"
+              sx={{ backgroundColor: "#d87d4a !important" }}
+            >
+              DESCRIPTION
+            </StyledTableCell>
+            <StyledTableCell
+              align="center"
+              sx={{ backgroundColor: "#d87d4a !important" }}
+            >
+              EDIT
+            </StyledTableCell>
+            <StyledTableCell
+              align="center"
+              sx={{ backgroundColor: "#d87d4a !important" }}
+            >
+              DELETE
+            </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {products.map((item) => (
-            <StyledTableRow key={item.name}>
+          {products.map((item,i) => (
+            <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
                 {item.id}
               </StyledTableCell>
@@ -74,13 +116,13 @@ const ProductsTable = ({ products, deleteProductById, openModal, setOpenModal })
                 {item.description}
               </StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton onClick={()=>setOpenModal(!openModal)}>
+                <IconButton onClick={() => setOpenModal(!openModal)}>
                   <EditIcon />
                 </IconButton>
               </StyledTableCell>
-              {openModal && <EditProductContainer id={item.id}/>}
+              {/* {openModal && <EditProductContainer />} */}
               <StyledTableCell align="center">
-                <IconButton onClick={()=>deleteProductById(item.id)}>
+                <IconButton onClick={() => deleteProductById(item.id)}>
                   <DeleteIcon />
                 </IconButton>
               </StyledTableCell>

@@ -36,7 +36,6 @@ const ProductsTable = ({
   deleteProductById,
   openModal,
   setOpenModal,
- 
 }) => {
   return (
     <TableContainer
@@ -117,7 +116,7 @@ const ProductsTable = ({
                 {item.description}
               </StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton onClick={setOpenModal(!openModal)}>
+                <IconButton onClick={() => setOpenModal(!openModal)}>
                   <EditIcon />
                 </IconButton>
               </StyledTableCell>

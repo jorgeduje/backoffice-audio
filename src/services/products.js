@@ -8,3 +8,7 @@ export const deleteById = (id)=>{
     let product = productsInstance.delete(`/${id}`)
     return product
 }
+export const editById = (id)=>{
+    let product = productsInstance.patch(`/${id}`)
+    return product
+}

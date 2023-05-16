@@ -16,6 +16,7 @@ const Products = ({
   openEdit,
   handleCloseEdit,
   productForEdit,
+  editProduct
 }) => {
   return (
     <>
@@ -51,12 +52,14 @@ const Products = ({
         products={products}
         deleteProductById={deleteProductById}
         editProductModal={editProductModal}
+        editProduct={editProduct}
       />
       <NewProductModalContainer open={open} handleClose={handleClose} />
       <EditProductModalContainer
         openEdit={openEdit}
         handleCloseEdit={handleCloseEdit}
         productForEdit={productForEdit}
+        editProduct={editProduct}
       />
     </>
   );

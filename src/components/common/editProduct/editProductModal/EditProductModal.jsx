@@ -6,6 +6,7 @@ const EditProductModal = ({
   handleCloseEdit,
   style,
   productForEdit,
+  editProduct
 }) => {
   return (
     <div>
@@ -16,7 +17,7 @@ const EditProductModal = ({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <EditProductFormContainer productForEdit={productForEdit} />
+          <EditProductFormContainer productForEdit={productForEdit} editProduct={editProduct} />
         </Box>
       </Modal>
     </div>

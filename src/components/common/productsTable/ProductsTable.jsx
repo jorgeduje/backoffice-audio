@@ -35,12 +35,11 @@ const ProductsTable = ({ products, deleteProductById, editProductModal }) => {
     <TableContainer
       component={Paper}
       sx={{
-        boxShadow: "none",
         overflow: "hidden",
         mt: 4,
-        "-webkit-box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
-        "-moz-box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
-        "box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+        "webkitBoxShadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+        "mozBoxShadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+        "boxShadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
       }}
     >
       <Table

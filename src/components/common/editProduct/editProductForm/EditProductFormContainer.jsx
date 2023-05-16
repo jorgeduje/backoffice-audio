@@ -1,8 +1,9 @@
 import { EditProfuctForm } from "./EditProfuctForm"
 
-const EditProductFormContainer = ({productForEdit}) => {
+const EditProductFormContainer = ({productForEdit, editProduct}) => {
+ 
   return (
-    <EditProfuctForm productForEdit={productForEdit} />
+    <EditProfuctForm productForEdit={productForEdit} editProduct={editProduct}/>
   )
 }
 

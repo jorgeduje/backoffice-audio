@@ -15,6 +15,7 @@ const EditProductModalContainer = ({
   openEdit,
   handleCloseEdit,
   productForEdit,
+  editProduct
 }) => {
   return (
     <EditProductModal
@@ -22,6 +23,7 @@ const EditProductModalContainer = ({
       openEdit={openEdit}
       handleCloseEdit={handleCloseEdit}
       style={style}
+      editProduct={editProduct}
     />
   );
 };

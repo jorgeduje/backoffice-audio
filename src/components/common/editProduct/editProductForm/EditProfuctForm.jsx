@@ -5,7 +5,7 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
   return (
     <div
       style={{
-        width: "350px",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         gap: "1rem",

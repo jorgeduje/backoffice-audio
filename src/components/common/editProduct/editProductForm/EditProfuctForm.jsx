@@ -1,8 +1,47 @@
+import { Box, TextField } from "@mui/material";
+import { ButtonCustom, CssTextField } from "../../../Custom/CustomComponents";
+
 export const EditProfuctForm = ({ productForEdit }) => {
   return (
-    <div>
-      <h1>Este es el formulario de editar</h1>
+    <div style={{width:'100%', display:'flex', flexDirection:'column', gap:'1rem'}}>
+      <h1>EDIT PRODUCT</h1>
       <h2>El producto para editar es: {productForEdit.slug}</h2>
+      <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'0.5rem'}}>
+        <label style={{fontWeight:'bold', marginLeft:'0.5rem'}}>Id</label>
+        <CssTextField 
+        disabled
+        defaultValue={productForEdit.id}
+        />
+      </Box>
+      <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'0.5rem'}}>
+        <label  style={{fontWeight:'bold', marginLeft:'0.5rem'}}>Name</label>
+        <CssTextField defaultValue={productForEdit.name} />
+      </Box>
+      <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'0.5rem'}}>
+        <label  style={{fontWeight:'bold', marginLeft:'0.5rem'}}>Category</label>
+        <CssTextField defaultValue={productForEdit.category} />
+      </Box>
+      <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'0.5rem'}}>
+        <label  style={{fontWeight:'bold', marginLeft:'0.5rem'}}>Price</label>
+        <CssTextField defaultValue={productForEdit.price} />
+      </Box>
+      <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'0.5rem'}}>
+        <label  style={{fontWeight:'bold', marginLeft:'0.5rem'}}>Stock</label>
+        <CssTextField defaultValue={productForEdit.stock} />
+      </Box>
+      <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'0.5rem'}}>
+        <label  style={{fontWeight:'bold', marginLeft:'0.5rem'}}>Description</label>
+        {/* <CssTextField defaultValue={productForEdit.description} rows={4}/> */}
+        <TextField
+          id="outlined-multiline-static"
+          // label="Multiline"
+          multiline
+          rows={6}
+          defaultValue={productForEdit.description}
+        />
+      </Box>
+     
+      <ButtonCustom style={{width:'100%', marginTop:'2rem'}}>Send</ButtonCustom>
     </div>
   );
 };

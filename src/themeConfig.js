@@ -12,5 +12,7 @@ export const theme = createTheme({
       second: "#FFFFFF",
       third: "#000000",
     },
-  },
+  }, typography:{
+    fontFamily: 'Manrope', 
+  }
 });

@@ -4,8 +4,7 @@ import { ButtonCustom, CssTextField } from "../../../Custom/CustomComponents";
 export const EditProfuctForm = ({ productForEdit }) => {
   return (
     <div style={{width:'100%', display:'flex', flexDirection:'column', gap:'1rem'}}>
-      <h1>EDIT PRODUCT</h1>
-      <h2>El producto para editar es: {productForEdit.slug}</h2>
+      <h1 style={{textAlign:'center', fontWeight:'700', fontSize:'32px'}}>EDIT PRODUCT</h1>
       <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'0.5rem'}}>
         <label style={{fontWeight:'bold', marginLeft:'0.5rem'}}>Id</label>
         <CssTextField 

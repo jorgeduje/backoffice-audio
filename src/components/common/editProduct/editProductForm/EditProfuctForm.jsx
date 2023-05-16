@@ -62,7 +62,7 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
         </label>
         <CssTextField defaultValue={productForEdit.price} />
       </Box>
-      <Box
+      {/* <Box
         sx={{
           width: "100%",
           display: "flex",
@@ -74,7 +74,7 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
           Stock
         </label>
         <CssTextField defaultValue={productForEdit.stock} />
-      </Box>
+      </Box> */}
       <Box
         sx={{
           width: "100%",

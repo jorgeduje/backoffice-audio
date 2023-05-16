@@ -23,7 +23,7 @@ const ProductsContainer = () => {
   const [openEdit, setOpenEdit] = useState(false);
   const handleOpenEdit = () => setOpenEdit(true);
   const handleCloseEdit = () => setOpenEdit(false);
-  // const [isEdited, setIsEdited] = useState(false);
+  const [isEdited, setIsEdited] = useState(false);
 
   useEffect(() => {
     setIsDelete(false);
@@ -36,7 +36,7 @@ const ProductsContainer = () => {
         console.log(error);
       });
   }, [isDeleted, 
-    // isEdited
+    isEdited
   ]);
 
   const deleteProductById = (id) => {
@@ -78,8 +78,8 @@ const ProductsContainer = () => {
       if (result.isConfirmed) {
         Swal.fire("Saved!", "", "success");
         editById(id)
-          // .then(() => setIsEdited(true))
-          // .catch((err) => console.log(err))
+          .then(() => setIsEdited(true))
+          .catch((err) => console.log(err))
           .then((res) => console.log(res))
           .catch((err) => console.log(err));
       } else if (result.isDenied) {

@@ -90,7 +90,7 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
           id="outlined-multiline-static"
           // label="Multiline"
           multiline
-          rows={6}
+          rows={4}
           defaultValue={productForEdit.description}
         />
       </Box>

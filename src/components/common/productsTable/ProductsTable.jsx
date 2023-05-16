@@ -9,7 +9,6 @@ import Paper from "@mui/material/Paper";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditProductContainer from "../editProduct/EditProductContainer";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -31,17 +30,18 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const ProductsTable = ({
-  products,
-  deleteProductById,
-  openModal,
-  setOpenModal,
- 
-}) => {
+const ProductsTable = ({ products, deleteProductById, editProductModal }) => {
   return (
     <TableContainer
       component={Paper}
-      sx={{ padding: "3rem", boxShadow: "none", overflow: "hidden" }}
+      sx={{
+        boxShadow: "none",
+        overflow: "hidden",
+        mt: 4,
+        "-webkit-box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+        "-moz-box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+        "box-shadow": " 0px 0px 31px 1px rgba(87,44,11,0.59)",
+      }}
     >
       <Table
         sx={{
@@ -105,7 +105,7 @@ const ProductsTable = ({
         </TableHead>
         <TableBody>
           {products.map((item) => (
-            <StyledTableRow key={item.name}>
+            <StyledTableRow key={item.id}>
               <StyledTableCell component="th" scope="row">
                 {item.id}
               </StyledTableCell>
@@ -117,7 +117,7 @@ const ProductsTable = ({
                 {item.description}
               </StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton onClick={setOpenModal(!openModal)}>
+                <IconButton onClick={() => editProductModal(item)}>
                   <EditIcon />
                 </IconButton>
               </StyledTableCell>

@@ -1,9 +1,16 @@
 import { Box, TextField } from "@mui/material";
 import { ButtonCustom, CssTextField } from "../../../Custom/CustomComponents";
 
-export const EditProfuctForm = ({ productForEdit, editProduct }) => {
+export const EditProfuctForm = ({
+  productForEdit,
+  values,
+  handleChange,
+  handleSubmit,
+  errors,
+}) => {
   return (
-    <div
+    <form
+    onSubmit={handleSubmit}
       style={{
         width: "100%",
         display: "flex",
@@ -34,7 +41,13 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
         }}
       >
         <label style={{ fontWeight: "bold", marginLeft: "0.5rem" }}>Name</label>
-        <CssTextField defaultValue={productForEdit.name} />
+        <CssTextField
+          defaultValue={productForEdit.name}
+          name="name"
+          onChange={handleChange}
+          error={errors.name ? true : false}
+          helperText={errors.name}
+        />
       </Box>
       <Box
         sx={{
@@ -47,7 +60,13 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
         <label style={{ fontWeight: "bold", marginLeft: "0.5rem" }}>
           Category
         </label>
-        <CssTextField defaultValue={productForEdit.category} />
+        <CssTextField
+          defaultValue={productForEdit.category}
+          name="category"
+          onChange={handleChange}
+          error={errors.category ? true : false}
+          helperText={errors.category}
+        />
       </Box>
       <Box
         sx={{
@@ -60,7 +79,13 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
         <label style={{ fontWeight: "bold", marginLeft: "0.5rem" }}>
           Price
         </label>
-        <CssTextField defaultValue={productForEdit.price} />
+        <CssTextField
+          defaultValue={productForEdit.price}
+          name="price"
+          onChange={handleChange}
+          error={errors.price ? true : false}
+          helperText={errors.price}
+        />
       </Box>
       {/* <Box
         sx={{
@@ -92,28 +117,19 @@ export const EditProfuctForm = ({ productForEdit, editProduct }) => {
           multiline
           rows={4}
           defaultValue={productForEdit.description}
+          name="description"
+          onChange={handleChange}
+          error={errors.description ? true : false}
+          helperText={errors.description}
         />
       </Box>
-      {/* <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.5rem",
-        }}
-      >
-        <label style={{ fontWeight: "bold", marginLeft: "0.5rem" }}>
-          Image
-        </label>
-        <input type="url" />
-      </Box> */}
       <ButtonCustom
         type="submit"
-        onClick={() => editProduct(productForEdit.id)}
+        onClick={() => console.log(values)}
         style={{ width: "100%", marginTop: "2rem" }}
       >
         Send
       </ButtonCustom>
-    </div>
+    </form>
   );
 };

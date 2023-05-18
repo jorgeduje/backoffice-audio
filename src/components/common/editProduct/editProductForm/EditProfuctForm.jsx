@@ -3,7 +3,6 @@ import { ButtonCustom, CssTextField } from "../../../Custom/CustomComponents";
 
 export const EditProfuctForm = ({
   productForEdit,
-  values,
   handleChange,
   handleSubmit,
   errors,
@@ -87,19 +86,6 @@ export const EditProfuctForm = ({
           helperText={errors.price}
         />
       </Box>
-      {/* <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.5rem",
-        }}
-      >
-        <label style={{ fontWeight: "bold", marginLeft: "0.5rem" }}>
-          Stock
-        </label>
-        <CssTextField defaultValue={productForEdit.stock} />
-      </Box> */}
       <Box
         sx={{
           width: "100%",
@@ -113,7 +99,6 @@ export const EditProfuctForm = ({
         </label>
         <TextField
           id="outlined-multiline-static"
-          // label="Multiline"
           multiline
           rows={4}
           defaultValue={productForEdit.description}
@@ -125,7 +110,7 @@ export const EditProfuctForm = ({
       </Box>
       <ButtonCustom
         type="submit"
-        onClick={() => console.log(values)}
+        // onClick={() => console.log(values)}
         style={{ width: "100%", marginTop: "2rem" }}
       >
         Send

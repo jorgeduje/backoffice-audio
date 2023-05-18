@@ -6,7 +6,6 @@ const EditProductModal = ({
   handleCloseEdit,
   style,
   productForEdit,
-  editProduct,
 }) => {
   return (
     <Modal
@@ -18,7 +17,6 @@ const EditProductModal = ({
       <Box sx={style}>
         <EditProductFormContainer
           productForEdit={productForEdit}
-          editProduct={editProduct}
         />
       </Box>
     </Modal>

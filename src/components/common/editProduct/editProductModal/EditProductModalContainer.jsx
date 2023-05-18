@@ -5,8 +5,8 @@ const style = {
   top: "50%",
   left: "calc(50% + 120px)",
   transform: "translate(-50%, -50%)",
-  width: 360,
-  maxHeight:'80vh',
+  width:{lg: '40vw',xs: '60vw'} ,
+  height:'auto',
   overFlowY:'scroll',
   bgcolor: "background.paper",
   border: "2px solid #fff",
@@ -18,7 +18,6 @@ const EditProductModalContainer = ({
   openEdit,
   handleCloseEdit,
   productForEdit,
-  editProduct
 }) => {
   return (
     <EditProductModal
@@ -26,7 +25,6 @@ const EditProductModalContainer = ({
       openEdit={openEdit}
       handleCloseEdit={handleCloseEdit}
       style={style}
-      editProduct={editProduct}
     />
   );
 };
